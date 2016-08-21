@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backbone Route Example</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript">
+       //'Router' is a name of the router class
+      var Router = Backbone.Router.extend({
+
+         //The 'routes' maps URLs with parameters to functions on your router
+         routes: {
+            "myroute" : "myFunc"
+         },
+
+         //'The function 'myFunc' defines the links for the route on the browser
+         myFunc: function (myroute) {
+            document.write(myroute);
+         }
+      });
+
+      //'router' is an instance of the Router
+      var router = new Router();
+
+      //Start listening to the routes and manages the history for bookmarkable URL's
+      Backbone.history.start();
+  </script>	
+</head>
+<body>
+  <a href="#route1">Route1 </a>
+     <a href="#route2">Route2 </a>
+     <a href="#route3">Route3 </a>
+</body>
+</html>
